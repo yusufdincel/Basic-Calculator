@@ -64,43 +64,34 @@ namespace Hesap_Makinesi
                 sayi2 = Convert.ToInt32(sayi2);
             }
            
+     
 
-
-            if (islem != "+" && islem != "-" && islem != "*" && islem != "/" && islem != "sqrt" && islem != "%")
+            switch (islem) 
             {
-                Console.WriteLine("Lütfen Geçerli Bir İşlem Giriniz...");
-            }
-            
 
-            else
-            {
-                if (islem == "+")
-                {
+                case "+":
                     toplam = sayi1 + sayi2;
-                    Console.WriteLine(sayi1 + islem + sayi2 + " = " + toplam);             
-                }
-                else if(islem == "-"){
-
+                    Console.WriteLine(sayi1 + islem + sayi2 + " = " + toplam);
+                    break;
+                case "-":
                     fark = sayi1 - sayi2;
                     Console.WriteLine(sayi1 + islem + sayi2 + " = " + fark);
-                }
-                else if(islem == "*")
-                {
+                    break;
+                case "*":
                     carpim = sayi1 * sayi2;
                     Console.WriteLine(sayi1 + islem + sayi2 + " = " + carpim);
-                }
-                else if(islem == "%")
-                {
-
-                    kalan = sayi1 % sayi2;
-                    Console.WriteLine(sayi1 + islem + sayi2 + " = " + kalan);
-                }
-                else
-                {
+                    break;
+                case "/":
                     bolum = sayi1 / sayi2;
                     Console.WriteLine(sayi1 + islem + sayi2 + " = " + bolum);
-                }
-
+                    break;
+                case "%":
+                    kalan = sayi1 % sayi2;
+                    Console.WriteLine(sayi1 + islem + sayi2 + " = " + kalan);
+                    break;
+                default:
+                    Console.WriteLine("Lütfen Geçerli Bir İşlem Giriniz...");
+                    break;
             }
 
             Console.WriteLine("----------------");
